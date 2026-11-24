@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import authRouter from "./auth/auth.routes";
 const app = express();
 
 // Middlewares
@@ -13,5 +14,7 @@ app.get("/", (req, res) => {
         message: "Welcome to Library Book Management System Server",
     });
 });
+
+app.use("/api/v1/auth", authRouter);
 
 export default app;
